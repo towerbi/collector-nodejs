@@ -3,7 +3,6 @@ import axios from "axios";
 const monitorID = process.env.MONITOR_ID;
 const APISecret = process.env.API_SECRET;
 const APIBaseURI = process.env.API_BASE_URI;
-
 const collection = "repositories";
 const recordEventURL =
   APIBaseURI + "/monitors/" + monitorID + "/events/" + collection;
@@ -85,7 +84,6 @@ async function main() {
               watchers: watchers,
               user_id: instance.user_id,
               url: instance.parameters.url,
-              _id: instance.id,
             };
           })
           .catch((err) => {
